@@ -3,7 +3,7 @@
       title="msg://taskDetailView.title">
     <data>
         <instance id="taskDc" class="com.company.projectmanagement.entity.Task">
-            <fetchPlan   extends="_base">
+            <fetchPlan extends="_base">
                 <property name="assignee" fetchPlan="_instance_name"/>
                 <property name="project" fetchPlan="_instance_name"/>
             </fetchPlan>
@@ -36,6 +36,12 @@
             <comboBox id="priorityField" property="priority"/>
             <textField id="estimationField" property="estimation"/>
             <textArea id="descriptionField" property="description" valueChangeMode="EAGER"/>
+            <fileStorageUploadField id="attachmentField"
+                                    property="attachment"
+                                    clearButtonVisible="true"
+                                    fileNameVisible="true"
+                                    uploadIcon="UPLOAD"
+                                    maxFileSize="10000000"/>
         </formLayout>
         <hbox>
             <button id="saveAndCloseBtn" action="detailSaveClose"/>
